@@ -1,0 +1,140 @@
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  padding: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.hero {
+  background-color: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+#services {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2.5em;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.service-item {
+  margin: 0 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#appointment {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #eaeaea;
+}
+
+#appointment h2 {
+  font-size: 2.5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form label {
+  margin: 10px 0 5px;
+}
+
+form input, form select, form button {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #0066cc;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #004d99;
+}
+
+#confirmation-message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: green;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+3. JavaScript (scripts.js):
+javascript
+Copy
+// Form Submission Logic
+document.getElementById('appointment-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const service = document.getElementById('service').value;
+  const date = document.getElementById('date').value;
+
+  // Confirmation message
+  const confirmationMessage = document.getElementById('confirmation-message');
+  confirmationMessage.innerHTML = `Thank you, ${name}! Your ${service} appointment is confirmed for ${date}. We look forward to seeing you!`;
+
+  // Clear the form
+  document.getElementById('appointment-form').reset();
+});
